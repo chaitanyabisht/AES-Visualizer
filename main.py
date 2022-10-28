@@ -5,9 +5,6 @@ from utils import *
 
 st.title('AES Visualizer')
 st.subheader('A web app to visualize the AES-128 encryption algorithm')
-st.write('''
-Developed by Chaitanya Bisht for the CS553 Cryptography course at Indian Institute of Technology, Bhilai.
-''')
 st.write('The message will be padded using PKCS#7 if it is less than 16 characters long. If it is more than 16 characters long, it will be truncated.')
 message = st.text_input('Enter a message in ASCII', placeholder='Enter a message')
 key = st.empty()
