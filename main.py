@@ -30,7 +30,10 @@ if option == 'Round Keys':
     with col1:
         for i in range(11):
             if (i % 2 == 0):
-                st.write('Round', i)
+                if (i == 0):
+                    st.write('Initial Key')
+                else:
+                    st.write('Round', i)
                 st.write(str(latex_table(round_keys[i])))
                 st.write()
     with col2:
