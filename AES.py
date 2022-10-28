@@ -159,23 +159,6 @@ class AES:
     
     def get_state(self):
         return copy.deepcopy(self.state)
-    
-    def __str__(self):
-        table = PrettyTable()
-        table.hrules = True
-        for i in range(0, 4):
-            table.add_row([hex(j) for j in self.state[i]])
-        return table.get_string(header=False, border=True)
-
-    def pretty_print(obj, hex_val = True):
-        table = PrettyTable()
-        table.hrules = True
-        for i in range(0, 4):
-            if (hex_val):
-                table.add_row([hex(j) for j in obj[i]])
-            else:
-                table.add_row(obj[i])
-        print(table.get_string(header=False, border=True))
 
     def dec2hex(obj):
         return [[hex(j) for j in i] for i in obj]
