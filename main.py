@@ -5,7 +5,9 @@ from utils import *
 
 st.title('AES Visualizer')
 st.subheader('A web app to visualize the AES-128 encryption algorithm')
-
+st.write('''
+Developed by Chaitanya Bisht for the CS553 Cryptography course at Indian Institute of Technology, Bhilai.
+''')
 message = st.text_input('Enter a message in ASCII', placeholder='Enter a message')
 key = st.empty()
 key.text_input('Enter a 128-bit key in hex', placeholder='Enter a key')
