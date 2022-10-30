@@ -1,7 +1,7 @@
 #Base Image to use
 FROM python:3.9.15
 
-#Expose port 8080
+#Expose port 443
 EXPOSE 443
 
 #Optional - install git to fetch packages directly from github
