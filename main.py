@@ -127,3 +127,11 @@ elif option == 'Encryption Round':
         st.write()
 elif option == 'Please select':
     st.write('Please select an option')
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
