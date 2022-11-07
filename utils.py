@@ -26,6 +26,7 @@ def set_state_from_ascii(cipher, ascii):
     state = [[row[i] for row in state] for i in range(len(state[0]))]
     cipher.set_state((state))
 
+@st.cache
 def key_matrix(key):
     k_mat = []
     row = []
@@ -38,12 +39,15 @@ def key_matrix(key):
     k_mat = [[row[i] for row in k_mat] for i in range(len(k_mat[0]))]
     k_mat = [[int(i, 16) for i in row] for row in k_mat]
     return k_mat
+
+@st.cache
 def round_keys(key):
     # convert the key into column major matrix
     k_mat = key_matrix(key)
     cipher = AES(k_mat)
     return cipher.key_expansion()
 
+@st.cache
 def latex_table(obj):
     table = r'''$ \begin{bmatrix}''' + '\n'
     for i in range(0, 4):
@@ -54,11 +58,11 @@ def latex_table(obj):
     table = table[:-1] + '\n' +r'''\end{bmatrix} $'''
     return table
 
+@st.cache
 def get_key_expansion(round, key):
     cipher = AES(key_matrix(key))
     sub_round_keys = cipher.key_expansion_steps(round)
     return sub_round_keys
-
 
 def encryption_round(message, key, round):
     cipher = AES(key_matrix(key))
